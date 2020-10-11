@@ -1,6 +1,7 @@
 # tasks
  Desafio Técnico - Desenvolvedor front-end - Fluig - TOTVS Joinville
 
+Utilizar o comando "npm install" para realizar o download das bibliotecas.
 Necessário executar o comando "ng serve" e o fake REST API pelo comando "json-server --delay 500 db.json"
 O REST API estará disponível na porta http://localhost:3000
 
