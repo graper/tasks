@@ -1,0 +1,28 @@
+<div>
+    <h3>Listas de tarefas</h3>
+</div>
+
+<table class="table table-hover custom-table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>         
+        <tr *ngFor="let list of dataSource; let i = index;">
+            <th scope="row">{{list.id}}</th>
+            <td class="col-md-2">{{list.title}}</td>
+            <td class="col-md-2"><button type="button" class="btn btn-primary" [routerLink]="['/list/'+list.id]" routerLinkActive="active">Editar</button></td>
+            <td class="col-md-2"><button type="button" class="btn btn-info" [routerLink]="['/tasks/'+list.id]" routerLinkActive="active">Tarefas</button></td>
+            <td class="col-md-2"><button type="button" class="btn btn-danger" (click)="delList(list.id, i)">Deletar</button></td>
+        </tr>       
+    </tbody>
+</table>
+
+<ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+    <p class="loading">Carregando...</p>
+</ngx-spinner>

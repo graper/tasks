@@ -1,0 +1,39 @@
+<h3>Tarefas</h3>    
+<button (click)="addTask()" type="button" class="btn btn-primary float-right">
+    Adicionar Tarefa
+</button>
+<button (click)="backList()" type="button" class="btn btn-secondary float-right">
+    Voltar a Lista
+</button>
+<form [formGroup]="taskForm" (ngSubmit)="saveTasks()">
+    <table class="table table-hover custom-table">
+        <thead>
+            <tr>
+                <th scope="col">Título</th>
+                <th scope="col">Status</th>            
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>                     
+            <ng-container *ngFor="let item of arrayTasks.controls; let i = index;">
+                <tr [formGroup]="item">
+                    <input type="text" class="form-control" formControlName="id" hidden>
+                    <input type="text" class="form-control" formControlName="listId" hidden>
+                    <td><input type="text" class="form-control" formControlName="title"></td>
+                    <td><select class="form-control" name="status" formControlName="status">
+                            <option value="aberto" selected>Aberto</option>
+                            <option value="concluido">Concluído</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </td>
+                    <td><button type="button" class="btn btn-danger" (click)="delTask(i)">Deletar</button></td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+    <button type="submit" [disabled]="!taskForm.valid" class="btn btn-success">Salvar</button>    
+</form>
+
+<ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+    <p class="loading">Carregando...</p>
+</ngx-spinner>

@@ -1,0 +1,16 @@
+<div>
+    <h3>Lista de tarefas</h3>
+    <button type="button" [disabled]="id == 0" class="btn btn-primary float-right" [routerLink]="['/tasks/'+id]">Tarefas</button>
+</div>
+
+<form [formGroup]="listForm" (ngSubmit)="save(listForm.value)">    
+    <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" placeholder="Título" class="form-control" name="title" formControlName="title">
+    </div>
+    <button type="submit" [disabled]="!listForm.valid" class="btn btn-success">Salvar</button>
+</form>
+
+<ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+    <p class="loading">Carregando...</p>
+</ngx-spinner>

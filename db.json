@@ -1,0 +1,45 @@
+{
+  "lists": [
+    {
+      "title": "Mercado",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Trabalho"
+    },
+    {
+      "id": 3,
+      "title": "Teste via POSTMAN"
+    },
+    {
+      "title": "Teste dos paranaue",
+      "id": 4
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "listId": 1,
+      "title": "Comprar arroz",
+      "status": "aberto"
+    },
+    {
+      "id": 2,
+      "listId": 1,
+      "title": "Comprar feijão",
+      "status": "aberto"
+    },
+    {
+      "id": 3,
+      "listId": 2,
+      "title": "Reunião às 10:00"
+    },
+    {
+      "id": 4,
+      "listId": "1",
+      "title": "Comprar salada",
+      "status": "aberto"
+    }
+  ]
+}
